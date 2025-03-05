@@ -1,0 +1,450 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  /* Conteneur principal */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Style des blocs Bento */
+  .bento-item {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Section Accueil */
+  .home {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-column: span 2; /* Prend 2 colonnes */
+    position: relative;
+  overflow: hidden;
+  gap: 1rem; 
+  }
+
+  .home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/background.jpg') center/cover no-repeat;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2); /* Effet de parallaxe */
+  }
+  
+  .home__greeting {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .home_name {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    color: #333;
+  }
+  
+  .home__education {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .home__buttons {
+    justify-content: center;
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .button--ghost {
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    color: #fff;
+  }
+  
+  .button--ghost:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .home__handle {
+    margin-top: 1.5rem;
+  }
+  
+  .home_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+  }
+  
+  .home__social {
+    margin-top: 1rem;
+  }
+  
+  .home__social-link {
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  .home__social-link:hover {
+    color: #0056b3;
+  }
+  
+  /* Section À propos */
+  .about {
+    grid-column: span 2; /* Prend 2 colonnes */
+  }
+  
+  .section__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .about__info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .about__box {
+    text-align: center;
+    flex: 1 1 200px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about__icon {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about__title {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .synopsys {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .photodintro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+  }
+  
+  .mamasyno p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+  }
+  
+  /* Section Galerie */
+  .gallery-container {
+    grid-column: span 2; /* Prend 2 colonnes */
+  }
+  
+  .gallery {
+    
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .gallery-track {
+    margin-top: 30px;
+    display: flex;
+    animation: scroll 30s linear infinite;
+  }
+  
+  .gallery-track img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 8px;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Section Contact */
+  .contact {
+    grid-column: span 2; /* Prend 2 colonnes */
+  }
+  
+  .contact__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact__card {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact__card-icon {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact__card-title {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .contact__button {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .contact__button:hover {
+    color: #0056b3;
+  }
+  
+  .contact__form {
+    flex: 1;
+  }
+  
+  .contact__form-div {
+    margin-bottom: 1rem;
+  }
+  
+  .contact__form-tag {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .contact__form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .contact__form-area textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  /* Pied de page */
+  .footbar {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: #fff;
+    margin-top: 2rem;
+  }
+  
+  .namefoot {
+    font-size: 1.5rem;
+  }
+  
+  .lienfooter {
+    margin-top: 1rem;
+  }
+  
+  .lienfooter a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .lienfooter a:hover {
+    color: #007bff;
+  }
+  /* Animation pour les blocs Bento */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .bento-item {
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+  }
+  
+  /* Délai pour chaque bloc */
+  .bento-item:nth-child(1) { animation-delay: 0.1s; }
+  .bento-item:nth-child(2) { animation-delay: 0.3s; }
+  .bento-item:nth-child(3) { animation-delay: 0.5s; }
+  .bento-item:nth-child(4) { animation-delay: 0.7s; }
+
+  /* Mode sombre */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f9;
+  }
+  
+  body.dark-mode .bento-item {
+    background-color: #2a2a2a;
+    color: #f4f4f9;
+  }
+  
+  body.dark-mode .button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  body.dark-mode .button--ghost {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  body.dark-mode .button--ghost:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skill i {
+  font-size: 3rem; /* Taille des icônes */
+}
+
+.skill span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+.github-link {
+    text-align: center;
+    margin-top: 6rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .github-link p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .github-link .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .github-link .button:hover {
+    background-color: #555;
+  }
+  
+  .github-link .button i {
+    font-size: 1.5rem;
+  }
